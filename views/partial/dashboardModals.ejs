@@ -1,0 +1,74 @@
+<!-- Modal.createArticle -->
+<div id="add_project" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header login-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Add Article</h4>
+      </div>
+      <div class="modal-body">
+        <form
+          action="/article/createArticle"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="form-group">
+            <input type="text" placeholder="Title" name="title" />
+            <input type="text" placeholder="Description" name="description" />
+            <textarea placeholder="body" name="body"></textarea>
+            <input type="file" name="articleImage" />
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button>
+            <button type="submit" class="btn btn-success">Save</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal.updateArticle -->
+<div id="updateArticle" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header login-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Edit Article</h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal.Profile -->
+<div id="profile" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div
+      class="modal-content-profile"
+      style="background-color: whitesmoke"
+    ></div>
+  </div>
+</div>
+
+<!-- Modal.Warning -->
+<div id="warningModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header login-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Warning</h4>
+      </div>
+      <div class="modal-body">...</div>
+      <div class="modal-footer">...</div>
+    </div>
+  </div>
+</div>

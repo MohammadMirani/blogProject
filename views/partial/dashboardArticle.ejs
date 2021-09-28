@@ -1,0 +1,76 @@
+<div class="row">
+  <% for( let i = 0; i < articles.length; i++ ) { %>
+  <div class="list-group Articles mainContainer p-2">
+    <div class="list-group Articles mainContainer p-2">
+      <a href="#" class="list-group-item">
+        <div class="media col-md-3">
+          <figure class="pull-left mx-1">
+            <img
+              class="media-object img-rounded img-responsive"
+              height="150"
+              width="150"
+              src="<%= articles[i].image%>"
+            />
+          </figure>
+        </div>
+        <div class="col-md-5">
+          <h4 class="list-group-item-heading pb-3"><%= articles[i].title%></h4>
+          <p class="list-group-item-text"><%= articles[i].description%></p>
+        </div>
+
+        <div class="d-grid gap-2 d-md-block container pt-4">
+          <div class="row justify-content-start">
+            <ul class="list-inline m-0">
+              <li class="list-inline-item">
+                <form
+                  action="/article/getSingleArticlePage/<%= articles[i]._id %>"
+                  method="GET"
+                >
+                  <button
+                    class="btn btn-primary btn-sm rounded-0"
+                    type="submit"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Read More"
+                  >
+                    <i class="fa fa-table"></i>
+                  </button>
+                </form>
+              </li>
+
+              <li class="list-inline-item">
+                  <button
+                    class="btn btn-success btn-sm rounded-0"
+                    type="submit"
+                    data-toggle="modal"
+                    data-target="#updateArticle"
+                    data-placement="top"
+                    title="Edit"
+                    onclick="editArticle('<%= articles[i]._id %>')"
+                  >
+                    <i class="fa fa-edit"></i>
+                  </button>
+              </li>
+              <li class="list-inline-item">
+                <button
+                  class="btn btn-danger btn-sm rounded-0"
+                  type="button"
+                  data-toggle="modal"
+                  data-target="#warningModal"
+                  data-placement="top"
+                  title="Delete"
+                  onclick="deleteArticle('<%= articles[i]._id  %>')"
+                >
+                  <i class="fa fa-trash"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <% } %>
+</div>
+
+<script src="/javascripts/article.js"></script>
